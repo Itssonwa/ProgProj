@@ -8,18 +8,17 @@ class Chatbot
 {
     public void start() 
     {
-        Console.WriteLine(@" _______   _______ ___________  _____ _____ _____  ______  _____ _____ 
-/  __ \ \ / / ___ \  ___| ___ \/  ___|  ___/  __ \ | ___ \|  _  |_   _|
-| /  \/\ V /| |_/ / |__ | |_/ /\ `--.| |__ | /  \/ | |_/ /| | | | | |  
-| |     \ / | ___ \  __||    /  `--. \  __|| |     | ___ \| | | | | |  
-| \__/\ | | | |_/ / |___| |\ \ /\__/ / |___| \__/\ | |_/ /\ \_/ / | |  
- \____/ \_/ \____/\____/\_| \_|\____/\____/ \____/ \____/  \___/  \_/  
-                                                                       
-                                                                       ");
+        Console.WriteLine(@"______ _   _ _____  _   __  _____ _   _  _____  ______  _____ _____ 
+| ___ \ | | /  __ \| | / / |_   _| | | ||  ___| | ___ \|  _  |_   _|
+| |_/ / | | | /  \/| |/ /    | | | |_| || |__   | |_/ /| | | | | |  
+| ___ \ | | | |    |    \    | | |  _  ||  __|  | ___ \| | | | | |  
+| |_/ / |_| | \__/\| |\  \   | | | | | || |___  | |_/ /\ \_/ / | |  
+\____/ \___/ \____/\_| \_/   \_/ \_| |_/\____/  \____/  \___/  \_/  
+                                                                    
+                                                                    ");
 
         Console.Title = "The Bot";
 
-       
         Greeting();
 
         while (true)
@@ -27,7 +26,7 @@ class Chatbot
             Console.Write("\nYou: ");
             string userInput = Console.ReadLine();
 
-            // ✅ Input validation
+            
             if (string.IsNullOrWhiteSpace(userInput))
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
@@ -38,14 +37,14 @@ class Chatbot
 
             userInput = userInput.ToLower();
 
-            // ✅ Exit condition
+            
             if (userInput == "EXIT")
             {
                 Console.WriteLine("see ya partner");
                 break;
             }
 
-            // ✅ Predefined responses
+         
             Respond(userInput);
         }
     }
@@ -72,7 +71,7 @@ class Chatbot
                 break;
 
             case "what is your name":
-                Console.WriteLine("Buck the bot. But you can call me BUCK(tips hat)");
+                Console.WriteLine("Buck the bot. But you can call me BUCK.(tips hat)");
                 break;
 
             default:
