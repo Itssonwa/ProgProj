@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+ 
 
-using System;
 
 public class User
 {
@@ -19,5 +19,8 @@ public class User
         {
             Name = "Guest";
         }
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine($"Bot: Nice to meet you, {Name}!");
+        Console.ResetColor();
     }
 }
