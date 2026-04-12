@@ -4,10 +4,82 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-class Chatbot
+using System;
+
+public class Chatbot
 {
-    public void start() 
+    private User user;
+    private AudioPlayer audio;
+
+    public Chatbot()
     {
+        user = new User();
+        audio = new AudioPlayer();
+    }
+
+    public void Start()
+    {
+        ShowAsciiArt();
+        audio.PlayGreeting();
+
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Buck: Howdy,welcome to the Cybersecurity Chatbot![tips hat]");
+        Console.ResetColor();
+
+        user.GetName();
+
+        while (true)
+        {
+            Console.Write("\nYou: ");
+            string input = Console.ReadLine();
+
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                ShowError("type something.");
+                continue;
+            }
+
+            input = input.ToLower();
+
+            if (input == "EXIT")
+            {
+                Console.WriteLine("Buck: Stay safe online Partner. Adios!");
+                break;
+            }
+
+            Respond(input);
+        }
+    }
+
+    private void Respond(string input)
+    {
+        Console.ForegroundColor = ConsoleColor.Cyan;
+
+        switch (input)
+        {
+            case "what is phishing":
+                Console.WriteLine("Buck: Phishing's like a snake oil salesman lakin' to you, tryin' to swindle your secrets outta ya.");
+                break;
+
+            case "what is malware":
+                Console.WriteLine("Buck: Malware's like a rustler sneakin' into your digital ranch, intent on causin' trouble for your computer.");
+                break;
+
+            case "how to stay safe online":
+                Console.WriteLine("Buck: Try use stronger passwords, keep a keen eye out for suspicious links, and keep your software updated,partner.");
+                break;
+
+            default:
+                Console.WriteLine("Buck: I’m not sure about that friend. How about ya ask about cybersecurity.");
+                break;
+        }
+
+        Console.ResetColor();
+    }
+
+    private void ShowAsciiArt()
+    {
+        Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine(@"______ _   _ _____  _   __  _____ _   _  _____  ______  _____ _____ 
 | ___ \ | | /  __ \| | / / |_   _| | | ||  ___| | ___ \|  _  |_   _|
 | |_/ / | | | /  \/| |/ /    | | | |_| || |__   | |_/ /| | | | | |  
@@ -15,70 +87,15 @@ class Chatbot
 | |_/ / |_| | \__/\| |\  \   | | | | | || |___  | |_/ /\ \_/ / | |  
 \____/ \___/ \____/\_| \_/   \_/ \_| |_/\____/  \____/  \___/  \_/  
                                                                     
-                                                                    ");
-
-        Console.Title = "The Bot";
-
-        Greeting();
-
-        while (true)
-        {
-            Console.Write("\nYou: ");
-            string userInput = Console.ReadLine();
-
-            
-            if (string.IsNullOrWhiteSpace(userInput))
-            {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine(" enter something");
-                Console.ResetColor();
-                continue;
-            }
-
-            userInput = userInput.ToLower();
-
-            
-            if (userInput == "EXIT")
-            {
-                Console.WriteLine("see ya partner");
-                break;
-            }
-
-         
-            Respond(userInput);
-        }
-    }
-
-    static void Greeting()
-    {
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine("Howdy partner. Welcome to me, the chatbot ");
+                                                                    
+    ");
         Console.ResetColor();
     }
 
-    static void Respond(string input)
+    private void ShowError(string message)
     {
-        Console.ForegroundColor = ConsoleColor.Yellow;
-
-        switch (input)
-        {
-            case "hello":
-                Console.WriteLine("hey there friend.");
-                break;
-
-            case "how are you":
-                Console.WriteLine("code runninin smoothly,partner.");
-                break;
-
-            case "what is your name":
-                Console.WriteLine("Buck the bot. But you can call me BUCK.(tips hat)");
-                break;
-
-            default:
-                Console.WriteLine("sorry friend, I don't real know what to say to that.");
-                break;
-        }
-
-
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("Buck: " + message);
+        Console.ResetColor();
     }
 }
