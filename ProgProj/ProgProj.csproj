@@ -8,6 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Greeting.wav" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Greeting.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Spectre.Console" Version="0.55.0" />
     <PackageReference Include="System.Windows.Extensions" Version="10.0.5" />
   </ItemGroup>

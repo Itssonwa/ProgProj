@@ -16,7 +16,8 @@ public class Chatbot
         audio.PlayGreeting();
 
         Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine("Buck: Howdy,welcome to the Cybersecurity Chatbot![tips hat]");
+        Console.WriteLine("Buck: Howdy,welcome to the Cybersecurity Chatbot![tips hat] ");
+        Console.WriteLine("Buck:  Ya got any security questions that need answerin ?");
         Console.ResetColor();
 
         user.GetName();
@@ -33,7 +34,7 @@ public class Chatbot
             }
 
             input = input.ToLower();
-            if (input == "==EXIT==")
+            if (input == "exit")
             {
                 Console.WriteLine("Buck: Stay safe online Partner. Adios!");
                 break;

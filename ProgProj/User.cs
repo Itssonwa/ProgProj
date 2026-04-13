@@ -11,7 +11,7 @@ public class User
 
         if (string.IsNullOrWhiteSpace(Name))
         {
-            Name = "Guest";
+            Name = "friend";
         }
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine($"Buck: Howdy, {Name} its a pleaser to met ya!");
