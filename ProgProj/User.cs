@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
- 
-
 
 public class User
 {
@@ -20,7 +14,7 @@ public class User
             Name = "Guest";
         }
         Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine($"Bot: Nice to meet you, {Name}!");
+        Console.WriteLine($"Buck: Howdy, {Name} its a pleaser to met ya!");
         Console.ResetColor();
     }
 }

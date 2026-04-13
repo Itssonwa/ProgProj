@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
 
 public class Chatbot
 {
@@ -122,13 +116,16 @@ public class Chatbot
     private void ShowAsciiArt()
     {
         Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine(@"______ _   _ _____  _   __  _____ _   _  _____  ______  _____ _____ 
+        Console.WriteLine(@" 
+====================================================================
+______       _____  _   __ ______ _  __  ______  _____  _____ ______
 | ___ \ | | /  __ \| | / / |_   _| | | ||  ___| | ___ \|  _  |_   _|
 | |_/ / | | | /  \/| |/ /    | | | |_| || |__   | |_/ /| | | | | |  
 | ___ \ | | | |    |    \    | | |  _  ||  __|  | ___ \| | | | | |  
 | |_/ / |_| | \__/\| |\  \   | | | | | || |___  | |_/ /\ \_/ / | |  
 \____/ \___/ \____/\_| \_/   \_/ \_| |_/\____/  \____/  \___/  \_/  
-                                                                    
+
+ ===================================================================                                                                   
                                                                     
     ");
         Console.ResetColor();

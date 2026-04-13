@@ -1,13 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Media;
 
-class AudioPlayer
+public class AudioPlayer
 {
-    public void start()
+    public void PlayGreeting()
     {
-
+        try
+        {
+            SoundPlayer player = new SoundPlayer("Greeting.wav");
+            player.Load();
+            player.PlaySync();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Buck: Sorry partner, theres an Audio error" + ex.Message);
+        }
     }
 }
